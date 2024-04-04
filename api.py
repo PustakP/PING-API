@@ -1,15 +1,8 @@
 import anthropic
-import os
 
-from dotenv import load_dotenv
-load_dotenv()
 
-key = os.getenv("ANTHROPIC_API_KEY")
 
 def rhyme(string):
-    client = anthropic.Anthropic(
-        api_key=key,
-    )
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -23,9 +16,6 @@ def rhyme(string):
 
 
 def define(string):
-    client = anthropic.Anthropic(
-        api_key=key,
-    )
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -41,9 +31,7 @@ def define(string):
     return message.content[0].text
 
 def synonym(string):
-    client = anthropic.Anthropic(
-        api_key=key,
-    )
+
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -57,9 +45,7 @@ def synonym(string):
     return message.content[0].text
 
 def antonym(string):
-    client = anthropic.Anthropic(
-        api_key=key,
-    )
+
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -73,9 +59,7 @@ def antonym(string):
     return message.content[0].text
 
 def joke(string):
-    client = anthropic.Anthropic(
-        api_key=key,
-    )
+
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -89,9 +73,7 @@ def joke(string):
 
 
 def celebrity(string):
-    client = anthropic.Anthropic(
-        api_key=key,
-    )
+
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -108,9 +90,7 @@ def celebrity(string):
 
 
 def chatgpt(initialMessage,exampleString,expectedOutput,string):
-    client = anthropic.Anthropic(
-        api_key=key,
-    )
+
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -166,8 +146,3 @@ def astrologer(string):
     exampleString = "Ram 20 Scorpio"
     expectedOutput = "The Universe has set up nothing but green lights for you. As far as the eye can see, it will be smooth sailing."
     return chatgpt(initialmessage,exampleString,expectedOutput,string)
-
-
-
-
-print(astrologer("Satwik 19 Leo"))
