@@ -2,4 +2,3 @@ anthropic
 flask
 requests
 gunicorn
-dotenv
