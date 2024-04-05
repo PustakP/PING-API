@@ -12,7 +12,7 @@ def rhyme(string):
 
 def define(string):
     client = openai.ChatCompletion.create(
-        model="chatgpt-3.5-turbo",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a vocabulary assistant. Skilled at defining words and phrases. You will be given a string and you will return the definition of the given string. Return ONLY the definition and nothing else."},
             {"role": "user", "content": 'Luscious.'},
@@ -24,7 +24,7 @@ def define(string):
 
 def synonym(string):
     client = openai.ChatCompletion.create(
-        model="chatgpt-3.5-turbo",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a vocabulary assistant. Skilled at defining words and phrases. You will be given a string and you will return synonym of the given string. Return ONLY the synonym and nothing else."},
             {"role": "user", "content": string}
@@ -34,7 +34,7 @@ def synonym(string):
 
 def antonym(string):
     client = openai.ChatCompletion.create(
-        model="chatgpt-3.5-turbo",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a vocabulary assistant. Skilled at defining words and phrases. You will be given a string and you will return antonym of the given string. Return ONLY the antonym and nothing else."},
             {"role": "user", "content": string}
@@ -44,7 +44,7 @@ def antonym(string):
 
 def joke(string):
     client = openai.ChatCompletion.create(
-        model="chatgpt-3.5-turbo",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a vocabulary assistant who has a brilliant humour. You will be given a string and you will return a joke related to the given string. Return ONLY the joke and nothing else."},
             {"role": "user", "content": string}
@@ -54,7 +54,7 @@ def joke(string):
 
 def celebrity(string):
     client = openai.ChatCompletion.create(
-        model="chatgpt-3.5-turbo",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a PAPARAAZI who has infinite knowledge of CELEBRITIES.You will be given a string and you have to name a not so famous celeb from that string "},
             {"role": "user", "content": "India"},
@@ -66,7 +66,7 @@ def celebrity(string):
 
 def chatgpt(initialMessage, exampleString, expectedOutput, string):
     client = openai.ChatCompletion.create(
-        model="chatgpt-3.5-turbo",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": initialMessage},
             {"role": "user", "content": exampleString},
