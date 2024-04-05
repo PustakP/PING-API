@@ -20,7 +20,7 @@ payload = {"string": string}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    rhyming_line = response.json()["rhyming_line"]
+    rhyming_line = response.json()["output"]
     print(rhyming_line)
 else:
     print(f"Error: {response.status_code}")
@@ -42,7 +42,7 @@ payload = {"string": word}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    definition = response.json()["definition"]
+    definition = response.json()["output"]
     print(definition)
 else:
     print(f"Error: {response.status_code}")
@@ -64,7 +64,7 @@ payload = {"string": word}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    synonym = response.json()["synonym"]
+    synonym = response.json()["output"]
     print(synonym)
 else:
     print(f"Error: {response.status_code}")
@@ -86,7 +86,7 @@ payload = {"string": word}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    antonym = response.json()["antonym"]
+    antonym = response.json()["output"]
     print(antonym)
 else:
     print(f"Error: {response.status_code}")
@@ -108,7 +108,7 @@ payload = {"string": topic}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    joke = response.json()["joke"]
+    joke = response.json()["output"]
     print(joke)
 else:
     print(f"Error: {response.status_code}")
@@ -130,7 +130,7 @@ payload = {"string": text}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    owo_text = response.json()["owo_text"]
+    owo_text = response.json()["output"]
     print(owo_text)
 else:
     print(f"Error: {response.status_code}")
@@ -152,7 +152,7 @@ payload = {"string": celebrity_name}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    celebrity_info = response.json()["celebrity_info"]
+    celebrity_info = response.json()["output"]
     print(celebrity_info)
 else:
     print(f"Error: {response.status_code}")
@@ -174,7 +174,7 @@ payload = {"string": genres}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    anime_suggestion = response.json()["anime_suggestion"]
+    anime_suggestion = response.json()["output"]
     print(anime_suggestion)
 else:
     print(f"Error: {response.status_code}")
@@ -196,7 +196,7 @@ payload = {"string": subject}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    adjective = response.json()["adjective"]
+    adjective = response.json()["output"]
     print(adjective)
 else:
     print(f"Error: {response.status_code}")
@@ -218,7 +218,7 @@ payload = {"string": topic}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    pickup_line = response.json()["pickup_line"]
+    pickup_line = response.json()["output"]
     print(pickup_line)
 else:
     print(f"Error: {response.status_code}")
@@ -240,7 +240,7 @@ payload = {"string": person_info}
 response = requests.post(url, json=payload)
 
 if response.status_code == 200:
-    prediction = response.json()["prediction"]
+    prediction = response.json()["output"]
     print(prediction)
 else:
     print(f"Error: {response.status_code}")
