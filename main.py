@@ -38,6 +38,12 @@ def joke_endpoint():
     output = p.joke(string)
     return jsonify(output=output)
 
+@app.route('/owo')
+def owo_endpoint():
+    string = request.args.get('string')
+    output = p.owo(string)
+    return jsonify(output=output)
+
 @app.route('/celebrity')
 def celebrity_endpoint():
     string = request.args.get('string')

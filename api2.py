@@ -52,13 +52,24 @@ def joke(string):
     )
     return client.choices[0].message['content']
 
+def owo(string):
+    client = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "Given a string, return the string in owo language/owospeak. Return ONLY the owo string and nothing elses."},
+            {"role": "user", "content": string}
+        ]
+    )
+    return client.choices[0].message['content']
+
+#mark
 def celebrity(string):
     client = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a PAPARAAZI who has infinite knowledge of CELEBRITIES.You will be given a string and you have to name a not so famous celeb from that string "},
-            {"role": "user", "content": "India"},
-            {"role": "assistant", "content":"Raj Kumar Rao"},
+            {"role": "system", "content": "You are a PAPARAAZI who has infinite knowledge of CELEBRITIES. You will be asked about a celebrity and you have to give random information about that celebrity"},
+            {"role": "user", "content": "Hrithik Roshan"},
+            {"role": "assistant", "content":"He has six fingers"},
             {"role": "user", "content": string}
         ]
     )
@@ -110,7 +121,7 @@ def pickupLine(string):
 def astrologer(string):
     initialmessage = '''You are an astrologer.
     You are given a name, age and zodiac sign of a person as a string.
-    You need to predict its future.
+    You need to predict their future.
     RETURN JUST ONE LINE
 '''
     exampleString = "Ram 20 Scorpio"
