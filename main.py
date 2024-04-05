@@ -85,7 +85,7 @@ def astrologer_endpoint():
 
 @app.route('/refrigerated_toaster')
 def refrigerated_toaster_endpoint():
-    return jsonify({"magic string":"9871"})
+    return jsonify({"magic code":9871})
 
 if __name__ == '__main__':
     app.run(debug=False, port=int(os.environ.get("PORT", 5000)), host='0.0.0.0')
