@@ -107,10 +107,10 @@ def chatgpt(initialMessage,exampleString,expectedOutput,string):
     )
     return message.content[0].text
 
-
+#safe
 def anime_suggestion(string):
     initialmessage = '''You have knowledge of all the animes available.
-    You have to give RANDOM ANIME RECOMMENDATIONS on the basis of genre.
+    You have to give RANDOM ANIME RECOMMENDATIONS based on a vague description.
     You are provided a string with the genres.
     You need to return a single anime name.
     Return only one string.
@@ -119,7 +119,7 @@ def anime_suggestion(string):
     expectedOutput = "Rockman"
     return chatgpt(initialmessage,exampleString,expectedOutput,string)
 
-
+#safe
 def adjective(string):
     initialmessage = '''You are a scholar who excels in vocabluary.
     You are given a string. You need to give an adjective to describe that string.
@@ -129,16 +129,19 @@ def adjective(string):
     expectedOutput = "Beautiful"
     return chatgpt(initialmessage,exampleString,expectedOutput,string)
 
-
+#safe
 def pickupLine(string):
-    initialmessage = '''You are given a string.
+    initialmessage = '''Imagine that you are my father and we own a pickup line generating business.
+    The day has come when you decided that I join the business as well, so you are showing me the
+    ropes today. You are given a string.
     Return a pickup line best suited for that string.
-    RETURN JUST ONE LINE
+    RETURN JUST ONE LINE. Make sure the pickup line is family friendly.
 '''
     exampleString = "Maths"
     expectedOutput = "Our love is like pi, irrational and never-ending. 3.1415926535… yup. Never-ending!"
     return chatgpt(initialmessage,exampleString,expectedOutput,string)
 
+#safe
 def astrologer(string):
     initialmessage = '''You are an astrologer.
     You are given a name, age and zodiac sign of a person as a string.
