@@ -2,7 +2,7 @@ import openai
 
 def rhyme(string):
     client = openai.ChatCompletion.create(
-        model="chatgpt-3.5-turbo",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a poetic assistant. Skilled at rhyming and creating beautiful verses. You will be given a string and you will return just one line of similar length which whymes with the given string. Return ONLY the rhyming line and nothing else."},
             {"role": "user", "content": string}
