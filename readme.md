@@ -1,4 +1,4 @@
-# Rhyming, Vocabulary, and Fun API Documentation
+# PING Bootcamp Practice API Documentation
 
 This API provides various endpoints for generating rhyming lines, defining words or phrases, finding synonyms and antonyms, generating jokes, converting text to owo language, providing celebrity information, and more. The API is built using Python and the `openai` library for interacting with the GPT-3.5-turbo language model.
 
