@@ -14,7 +14,7 @@ This endpoint accepts a string as input and returns a single line of poetry that
 import requests
 
 string = "The sun shines bright on the meadow's path"
-url = "http://ping.skarj.plrhyme"
+url = "http://ping.skarj.pl/rhyme"
 payload = {"string": string}
 
 response = requests.post(url, json=payload)
@@ -36,7 +36,7 @@ This endpoint accepts a string as input and returns the definition of the provid
 import requests
 
 word = "luscious"
-url = "http://ping.skarj.pldefine"
+url = "http://ping.skarj.pl/define"
 payload = {"string": word}
 
 response = requests.post(url, json=payload)
@@ -58,7 +58,7 @@ This endpoint accepts a string as input and returns a synonym for the provided w
 import requests
 
 word = "beautiful"
-url = "http://ping.skarj.plsynonym"
+url = "http://ping.skarj.pl/synonym"
 payload = {"string": word}
 
 response = requests.post(url, json=payload)
@@ -80,7 +80,7 @@ This endpoint accepts a string as input and returns an antonym for the provided 
 import requests
 
 word = "hot"
-url = "http://ping.skarj.plantonym"
+url = "http://ping.skarj.pl/antonym"
 payload = {"string": word}
 
 response = requests.post(url, json=payload)
@@ -102,7 +102,7 @@ This endpoint accepts a string as input and returns a joke related to the provid
 import requests
 
 topic = "dogs"
-url = "http://ping.skarj.pljoke"
+url = "http://ping.skarj.pl/joke"
 payload = {"string": topic}
 
 response = requests.post(url, json=payload)
@@ -124,7 +124,7 @@ This endpoint accepts a string as input and returns the string in owo language o
 import requests
 
 text = "Hello, how are you?"
-url = "http://ping.skarj.plowo"
+url = "http://ping.skarj.pl/owo"
 payload = {"string": text}
 
 response = requests.post(url, json=payload)
@@ -146,7 +146,7 @@ This endpoint accepts a string representing a celebrity name as input and return
 import requests
 
 celebrity_name = "Hrithik Roshan"
-url = "http://ping.skarj.plcelebrity"
+url = "http://ping.skarj.pl/celebrity"
 payload = {"string": celebrity_name}
 
 response = requests.post(url, json=payload)
@@ -168,7 +168,7 @@ This endpoint accepts a string representing genres as input and returns a random
 import requests
 
 genres = "Action, Adventure"
-url = "http://ping.skarj.planime_suggestion"
+url = "http://ping.skarj.pl/anime_suggestion"
 payload = {"string": genres}
 
 response = requests.post(url, json=payload)
@@ -190,7 +190,7 @@ This endpoint accepts a string as input and returns an adjective that describes 
 import requests
 
 subject = "Ocean"
-url = "http://ping.skarj.pladjective"
+url = "http://ping.skarj.pl/adjective"
 payload = {"string": subject}
 
 response = requests.post(url, json=payload)
@@ -212,7 +212,7 @@ This endpoint accepts a string as input and returns a family-friendly pickup lin
 import requests
 
 topic = "Books"
-url = "http://ping.skarj.plpickup_line"
+url = "http://ping.skarj.pl/pickup_line"
 payload = {"string": topic}
 
 response = requests.post(url, json=payload)
@@ -234,7 +234,7 @@ This endpoint accepts a string containing a person's name, age, and zodiac sign 
 import requests
 
 person_info = "John 25 Aries"
-url = "http://ping.skarj.plastrologer"
+url = "http://ping.skarj.pl/astrologer"
 payload = {"string": person_info}
 
 response = requests.post(url, json=payload)
