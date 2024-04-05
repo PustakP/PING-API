@@ -1,6 +1,6 @@
-# PING Bootcamp Practice API Documentation
+# Rhyming, Vocabulary, and Fun API Documentation
 
-This API provides multiple endpoints for generating requested custom words or phrases using the `claude-3-sonnet` language model from Anthropic. The API is built using Python and the `requests` library for making HTTP requests.
+This API provides various endpoints for generating rhyming lines, defining words or phrases, finding synonyms and antonyms, generating jokes, converting text to owo language, providing celebrity information, and more. The API is built using Python and the `openai` library for interacting with the GPT-3.5-turbo language model.
 
 ## Endpoints
 
@@ -14,7 +14,7 @@ This endpoint accepts a string as input and returns a single line of poetry that
 import requests
 
 string = "The sun shines bright on the meadow's path"
-url = "https://your-api-url.com/rhyme"
+url = "http://ping.skarj.plrhyme"
 payload = {"string": string}
 
 response = requests.post(url, json=payload)
@@ -36,7 +36,7 @@ This endpoint accepts a string as input and returns the definition of the provid
 import requests
 
 word = "luscious"
-url = "https://your-api-url.com/define"
+url = "http://ping.skarj.pldefine"
 payload = {"string": word}
 
 response = requests.post(url, json=payload)
@@ -48,15 +48,213 @@ else:
     print(f"Error: {response.status_code}")
 ```
 
+### 3. `/synonym`
+
+This endpoint accepts a string as input and returns a synonym for the provided word or phrase.
+
+**Example Usage:**
+
+```python
+import requests
+
+word = "beautiful"
+url = "http://ping.skarj.plsynonym"
+payload = {"string": word}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    synonym = response.json()["synonym"]
+    print(synonym)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+### 4. `/antonym`
+
+This endpoint accepts a string as input and returns an antonym for the provided word or phrase.
+
+**Example Usage:**
+
+```python
+import requests
+
+word = "hot"
+url = "http://ping.skarj.plantonym"
+payload = {"string": word}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    antonym = response.json()["antonym"]
+    print(antonym)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+### 5. `/joke`
+
+This endpoint accepts a string as input and returns a joke related to the provided string.
+
+**Example Usage:**
+
+```python
+import requests
+
+topic = "dogs"
+url = "http://ping.skarj.pljoke"
+payload = {"string": topic}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    joke = response.json()["joke"]
+    print(joke)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+### 6. `/owo`
+
+This endpoint accepts a string as input and returns the string in owo language or owospeak.
+
+**Example Usage:**
+
+```python
+import requests
+
+text = "Hello, how are you?"
+url = "http://ping.skarj.plowo"
+payload = {"string": text}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    owo_text = response.json()["owo_text"]
+    print(owo_text)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+### 7. `/celebrity`
+
+This endpoint accepts a string representing a celebrity name as input and returns random information about that celebrity.
+
+**Example Usage:**
+
+```python
+import requests
+
+celebrity_name = "Hrithik Roshan"
+url = "http://ping.skarj.plcelebrity"
+payload = {"string": celebrity_name}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    celebrity_info = response.json()["celebrity_info"]
+    print(celebrity_info)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+### 8. `/anime_suggestion`
+
+This endpoint accepts a string representing genres as input and returns a random anime recommendation based on those genres.
+
+**Example Usage:**
+
+```python
+import requests
+
+genres = "Action, Adventure"
+url = "http://ping.skarj.planime_suggestion"
+payload = {"string": genres}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    anime_suggestion = response.json()["anime_suggestion"]
+    print(anime_suggestion)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+### 9. `/adjective`
+
+This endpoint accepts a string as input and returns an adjective that describes the provided string.
+
+**Example Usage:**
+
+```python
+import requests
+
+subject = "Ocean"
+url = "http://ping.skarj.pladjective"
+payload = {"string": subject}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    adjective = response.json()["adjective"]
+    print(adjective)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+### 10. `/pickup_line`
+
+This endpoint accepts a string as input and returns a family-friendly pickup line related to the provided string.
+
+**Example Usage:**
+
+```python
+import requests
+
+topic = "Books"
+url = "http://ping.skarj.plpickup_line"
+payload = {"string": topic}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    pickup_line = response.json()["pickup_line"]
+    print(pickup_line)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+### 11. `/astrologer`
+
+This endpoint accepts a string containing a person's name, age, and zodiac sign as input and returns a prediction about their future.
+
+**Example Usage:**
+
+```python
+import requests
+
+person_info = "John 25 Aries"
+url = "http://ping.skarj.plastrologer"
+payload = {"string": person_info}
+
+response = requests.post(url, json=payload)
+
+if response.status_code == 200:
+    prediction = response.json()["prediction"]
+    print(prediction)
+else:
+    print(f"Error: {response.status_code}")
+```
+
 ## Theoretical Concepts
 
 ### Natural Language Processing (NLP)
 
-This API utilizes Natural Language Processing (NLP) techniques to generate rhyming lines and definitions based on the provided input. NLP is a branch of artificial intelligence that deals with the interaction between computers and human languages, enabling machines to understand, interpret, and generate human-like language.
+This API utilizes Natural Language Processing (NLP) techniques to generate responses based on the provided input. NLP is a branch of artificial intelligence that deals with the interaction between computers and human languages, enabling machines to understand, interpret, and generate human-like language.
 
 ### Language Models
 
-The API leverages the `claude-3-sonnet-20240229` language model from Anthropic, which is specifically trained for poetic and vocabulary tasks. Language models are statistical models that learn patterns and relationships from vast amounts of text data, allowing them to generate human-like text based on the given context or prompt.
+The API leverages the GPT-3.5-turbo language model from OpenAI, which is a powerful language model capable of generating human-like text based on the given context or prompt.
 
 ### Temperature
 
@@ -64,7 +262,7 @@ The `temperature` parameter in the API controls the randomness or creativity of 
 
 ### System Prompt
 
-The API utilizes a "system prompt" to instruct the language model on the specific task it should perform. For the `/rhyme` endpoint, the system prompt instructs the model to act as a poetic assistant and generate a rhyming line based on the provided input. Similarly, for the `/define` endpoint, the system prompt instructs the model to act as a vocabulary assistant and provide a definition for the given word or phrase.
+The API utilizes a "system prompt" to instruct the language model on the specific task it should perform. For example, the `/rhyme` endpoint instructs the model to act as a poetic assistant and generate a rhyming line, while the `/define` endpoint instructs the model to act as a vocabulary assistant and provide a definition for the given word or phrase.
 
 ### Role-based Conversation
 
