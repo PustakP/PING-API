@@ -3,6 +3,7 @@ import anthropic
 
 
 def rhyme(string):
+    client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -16,6 +17,7 @@ def rhyme(string):
 
 
 def define(string):
+    client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -31,7 +33,7 @@ def define(string):
     return message.content[0].text
 
 def synonym(string):
-
+    client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -45,7 +47,7 @@ def synonym(string):
     return message.content[0].text
 
 def antonym(string):
-
+    client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -59,7 +61,7 @@ def antonym(string):
     return message.content[0].text
 
 def joke(string):
-
+    client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -73,7 +75,7 @@ def joke(string):
 
 
 def celebrity(string):
-
+    client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
@@ -90,7 +92,7 @@ def celebrity(string):
 
 
 def chatgpt(initialMessage,exampleString,expectedOutput,string):
-
+    client = anthropic.Anthropic()
     message = client.messages.create(
         model="claude-3-sonnet-20240229",
         max_tokens=1000,
